@@ -1,0 +1,47 @@
+﻿@using TestApp.Components
+@model TestApp.ViewModels.UserSettingsUpdateViewModel
+
+@{
+    ViewBag.Title = "FillPreferedTags";
+}
+
+<div class="container">
+    <h2>Fill Prefered Tags</h2>
+    <div class="row">
+      
+            @using(Html.BeginForm("FillPreferedTags","Account",FormMethod.Post))
+            {
+        @Html.AntiForgeryToken()
+
+                <div class="col-xs-12">
+                    <ul id="Tags">                        
+                    </ul>
+                </div>
+        <div class="col-xs-12">
+            <button type="submit" class="btn btn-default" aria-label="Left Align">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </button>
+        </div>
+            
+            }
+        </div>
+
+       
+    </div>
+
+@section scripts
+{
+<script type="text/javascript">
+
+    function startTags() {
+        $("#Tags").tagit({
+            //availableTags: tags
+
+        });
+    }
+
+    $(function () {
+        startTags();
+    });
+</script>
+}

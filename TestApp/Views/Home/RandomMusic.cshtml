@@ -1,0 +1,19 @@
+﻿@using TestApp.Components
+@model TestApp.ViewModels.MusicIndexViewModel
+
+
+<div class="row">
+    <div class="col-xs-12 col-md-8">
+        @Html.Raw(Model.FormattedLink)
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        @Html.TagsFor(m => m.Tags)
+    </div>
+
+</div>
+
+
+
+
